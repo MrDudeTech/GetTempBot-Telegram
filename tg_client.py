@@ -6,13 +6,7 @@ import threading
 from config import *
 
 client = TelegramClient('tg_client', CLIENT_API_ID, CLIENT_API_HASH)
-client.connect()
-if (not client.is_user_authorized()):
-    client.sign_in(CLIENT_PHONE)
-    try:
-        client.sign_in(code=input('Enter code: '))
-    except SessionPasswordNeededError:
-        client.sign_in(password=CLIENT_2FA_PASSWORD)
+client.start(bot_token=API_TOKEN)
 
 
 def get_file_stream(message_ids):
