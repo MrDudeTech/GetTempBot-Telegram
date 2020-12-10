@@ -9,5 +9,5 @@ POLLING = True
 DB_URL = 'postgres://root@localhost:5432/testingfilesbot'
 CLIENT_API_ID = 1648885
 CLIENT_API_HASH = "978a4c44210cd6c4eb2db63674d1b98c"
-CLIENT_PHONE = "+16802041412"
+CLIENT_PHONE = ""
 CLIENT_2FA_PASSWORD = ""
