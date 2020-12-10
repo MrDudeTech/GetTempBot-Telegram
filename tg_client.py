@@ -5,8 +5,9 @@ from telethon.tl.types import InputPeerChannel
 import threading
 from config import *
 
-client = TelegramClient('tg_client', CLIENT_API_ID, CLIENT_API_HASH)
-client.start(bot_token=API_TOKEN)
+def start() -> None:
+    client = TelegramClient('tg_client', CLIENT_API_ID, CLIENT_API_HASH)
+    client.start(bot_token=API_TOKEN)
 
 
 def get_file_stream(message_ids):
