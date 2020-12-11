@@ -5,9 +5,14 @@ from telethon.tl.types import InputPeerChannel
 import threading
 from config import *
 
-def start() -> None:
-    client = TelegramClient('tg_client', CLIENT_API_ID, CLIENT_API_HASH)
-    client.start(bot_token=API_TOKEN)
+client = TelegramClient('tg_client', CLIENT_API_ID, CLIENT_API_HASH)
+client.connect()
+if (not client.is_user_authorized()):
+    client.sign_in(CLIENT_PHONE)
+    try:
+        client.sign_in(code=input('Enter code: '))
+    except SessionPasswordNeededError:
+        client.sign_in(password=CLIENT_2FA_PASSWORD)
 
 
 def get_file_stream(message_ids):
