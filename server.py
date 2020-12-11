@@ -7,21 +7,12 @@ from flask import (
 )
 import os
 import requests
-import telebot
-from telebot import types
-import threading
-
 from config import *
 from DbHandler import DbHandler
 from security import *
 import tg_client
 
-db = DbHandler(DB_URL)
 server = Flask(__name__)
-bot = telebot.TeleBot(API_TOKEN, threaded=True)
-big_files = {}
-TELEGRAM_FILE_URL = "https://api.telegram.org/file/bot{token}/".format(
-    token=API_TOKEN) + "{file_path}"
 
 @server.route("/bot", methods=['POST'])
 def getMessage():
