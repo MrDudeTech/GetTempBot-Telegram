@@ -143,4 +143,4 @@ if (POLLING):
     thread.start()
 
 
-server.run(host="0.0.0.0", port=3000)
+server.run(host="0.0.0.0", port=8080)
