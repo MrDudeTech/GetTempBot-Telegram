@@ -11,9 +11,11 @@ if (not client.is_user_authorized()):
     client.sign_in(CLIENT_PHONE)
     try:
         client.sign_in(code=input('Enter code: '))
+        
     except SessionPasswordNeededError:
         client.sign_in(password=CLIENT_2FA_PASSWORD)
 
+print(client.session.save())
 
 def get_file_stream(message_ids):
     peer = InputPeerChannel(CHANNEL_REPLY_TELETHON_ID,
