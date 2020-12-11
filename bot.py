@@ -142,5 +142,5 @@ if (POLLING):
     thread.daemon = True
     thread.start()
 
-
-server.run(host="localhost", port=int(os.environ.get("PORT", 5000)))
+port = int(os.environ.get("PORT", 5000))
+server.run(host="localhost", port=port)
