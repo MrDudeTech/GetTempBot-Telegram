@@ -143,4 +143,4 @@ if (POLLING):
     thread.start()
 
 
-server.run(host="localhost", port=8080)
+server.run(host="localhost", port= int(os.environ.get(“PORT”, 5000)))
